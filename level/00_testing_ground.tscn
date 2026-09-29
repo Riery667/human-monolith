@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://de5utxdkqjwrc"]
+
+[ext_resource type="PackedScene" uid="uid://bjodjaw06po5x" path="res://character/player.tscn" id="1_t140b"]
+[ext_resource type="Texture2D" uid="uid://cn1o27p5kno8d" path="res://textures/prototype/kenney_prototype-textures/PNG/Light/texture_08.png" id="2_1ax58"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_xcq6t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcq6t"]
+albedo_texture = ExtResource("2_1ax58")
+uv1_triplanar = true
+
+[node name="00 - Testing Ground" type="Node3D" unique_id=1374005467]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=257444508]
+camera_attributes = SubResource("CameraAttributesPractical_xcq6t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1725184797]
+transform = Transform3D(0.9107433, 0.24017985, -0.3359468, 0.10688527, 0.6486746, 0.75352293, 0.39890116, -0.72217375, 0.5651044, 0, 7.820593, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1973006835 instance=ExtResource("1_t140b")]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1686697259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003856182, -0.053557504, 0.00031799078)
+size = Vector3(100, 0.1, 100)
+material = SubResource("StandardMaterial3D_xcq6t")
